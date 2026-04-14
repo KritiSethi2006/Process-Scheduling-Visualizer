@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Process Scheduling Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Process Scheduling Visualizer</h1>
+
+  <div id="inputSection">
+    <h3>Enter Process Details</h3>
+    <form id="processForm">
+        <label for="pid">Process ID:</label>
+        <input type="text" id="pid" class="input-form"><br>
+        <label for="arrival">Arrival Time:</label>
+        <input type="number" id="arrival" class="input-form"><br>
+        <label for="burst">Burst Time:</label>
+        <input type="number" id="burst" class="input-form"><br>
+      <button type="button" id="processbutton" onclick="addProcess()">Add Process</button>
+    </form>
+    <div class="button-group">
+        <button onclick="runFCFS()">Run FCFS</button>
+        <button onclick="runSJF()">Run SJF</button>
+        <button onclick="runRR()">Run Round Robin</button>
+    </div> 
+  </div>
+
+  <hr>
+
+  <h3>Processes</h3>
+  <table id="processTable">
+    <tr><th>PID</th><th>Arrival</th><th>Burst</th></tr>
+  </table>
+
+  <hr>
+
+  <h3>Output</h3>
+  <div id="output"></div>
+  <div class="flex-board">
+    <canvas id="ganttChart" width="1210" height="250"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
